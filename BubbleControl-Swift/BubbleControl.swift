@@ -434,8 +434,6 @@ class BubbleControl: UIControl {
         
            bubble()
         
-        
-        
             }
     
    func touchDrag (sender: BubbleControl, event: UIEvent) {
@@ -466,7 +464,7 @@ class BubbleControl: UIControl {
        
     }
     
-
+    // Даблтап с анимацией
     var i = 0
     
     func doubleTap (sender: UITapGestureRecognizer) {

@@ -16,10 +16,29 @@ class ViewController: UIViewController {
     var itemBehaviour: UIDynamicItemBehavior!
     var panGesture: UIPanGestureRecognizer?
     var tapGesture: UITapGestureRecognizer?
+    var outsideGesture: UITapGestureRecognizer?
     var push: UIPushBehavior?
     let textLayer = CATextLayer()
     let fontName: CFStringRef = "Helvetica Neue"
     let fontSize: CGFloat = 19.0
+    var snap: UISnapBehavior!
+    
+    
+    @IBAction func outsidetouch(sender: UITapGestureRecognizer) {
+        
+        push!.pushDirection = CGVectorMake(randomBetweenNumbers(-3.5, secondNum: 3.5), randomBetweenNumbers(-3.5, secondNum: 3.5))
+        push!.active = true
+        animator.addBehavior(push!)
+        collision.addBoundaryWithIdentifier("barrier", fromPoint: CGPointMake(self.view.frame.origin.x, 62), toPoint: CGPointMake(self.view.frame.origin.x + self.view.frame.width, 62))
+        animator.addBehavior(collision)
+        itemBehaviour.addAngularVelocity(0.7, forItem: bubble)
+        animator.addBehavior(itemBehaviour)
+        
+        if ( snap != nil){
+        animator.removeBehavior(snap!)
+        }
+        
+    }
     
     
     
@@ -27,14 +46,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupBubble()
         textLayer.frame = bubble.bounds
-        textLayer.string = "\nВыполни\nТаск!"
+        textLayer.string = "\nComplete\na task!"
         textLayer.font = CTFontCreateWithName(fontName, fontSize, nil)
         textLayer.fontSize = fontSize
         textLayer.foregroundColor = UIColor.whiteColor().CGColor
         textLayer.alignmentMode = kCAAlignmentCenter
         textLayer.contentsScale = UIScreen.mainScreen().scale
         bubble.layer.addSublayer(textLayer)
-        
         /* включил границу объекта шар, что бы разобраться с этим багом */
        // self.bubble.layer.borderWidth = 1.0
        // self.bubble.layer.borderColor = UIColor.blueColor().CGColor
@@ -42,6 +60,8 @@ class ViewController: UIViewController {
        // bubble.layer.cornerRadius = 1.0
         view.addSubview(bubble)
         
+        
+    
         animator = UIDynamicAnimator(referenceView: view)
         gravity = UIGravityBehavior(items: [bubble])
         gravity.gravityDirection = CGVector(dx: 0.0, dy: 0.0)
@@ -62,16 +82,16 @@ class ViewController: UIViewController {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.onTap(_:)))
         bubble!.addGestureRecognizer(tapGesture!)
         
-        panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.panning(_:)));
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.panning(_:)))
         bubble!.addGestureRecognizer(panGesture!)
+        
         
         push = UIPushBehavior(items: [bubble], mode: .Instantaneous)
         push!.magnitude = 0.4
         push!.pushDirection = CGVectorMake(randomBetweenNumbers(-3.5, secondNum: 3.5), randomBetweenNumbers(-3.5, secondNum: 3.5))
         push!.active = true
         animator.addBehavior(push!)
-        
-        
+    
         
         
     }
@@ -87,6 +107,8 @@ class ViewController: UIViewController {
         
         bubble = BubbleControl (size: CGSizeMake(90, 90))
         bubble.image = UIImage (named: "basket.png")
+        bubble.center.x = win.w/2
+        bubble.center.y = win.h/2
         
       //  bubble.layer.contents = UIImage(named: "basket.png")?.CGImage
       //  bubble.layer.contentsGravity = kCAGravityCenter
@@ -158,11 +180,25 @@ class ViewController: UIViewController {
     }
     
     func onTap(tap: UITapGestureRecognizer) {
+        let win = APPDELEGATE.window!
+        let tapPoint: CGPoint = CGPoint(x: win.w/2, y: win.h/2)
+        
         animator.removeAllBehaviors()
         
+        if(bubble.center.x != win.w/2 && bubble.center.y != win.h/2){
+            snap = UISnapBehavior(item: bubble, snapToPoint: tapPoint)
+            animator.addBehavior(snap)
+            bubble.setScale(1.3)
+            
+        }
+        bubble.setScale(sn)
+        
+        
+        
+        
+
         
     }
-    
     
     
   

@@ -1,68 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qiN-0q-Icn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qiN-0q-Icn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Пузырёк-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BubbleControl_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLz-eX-vsC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qLz-eX-vsC">
                                 <rect key="frame" x="119" y="314" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo690634993670662164" translatesAutoresizingMaskIntoConstraints="NO" id="FU8-0X-XUt">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo690634993670662164" id="FU8-0X-XUt">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="FU8-0X-XUt" secondAttribute="trailing" id="0yj-uV-t0A"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FU8-0X-XUt" secondAttribute="bottom" id="Dwx-dc-fcD"/>
-                            <constraint firstItem="FU8-0X-XUt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eV0-yG-VFu"/>
-                            <constraint firstItem="FU8-0X-XUt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ivF-Ek-ypW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FU8-0X-XUt" secondAttribute="trailing" id="y8S-hf-s9F"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="y8S-hf-s9F"/>
-                            </mask>
-                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dzb-g5-WtF" appends="YES" id="CKe-Mp-FbM"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Пузырёк" id="bXe-NX-c6r"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="dzb-g5-WtF"/>
+                <tapGestureRecognizer id="dzb-g5-WtF">
+                    <connections>
+                        <action selector="outsidetouch:" destination="BYZ-38-t0r" id="bh9-qa-2Ag"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="666" y="841"/>
+            <point key="canvasLocation" x="355.19999999999999" y="796.14666666666665"/>
         </scene>
         <!--Pushed View-->
         <scene sceneID="KpZ-cd-ynC">
             <objects>
                 <viewController title="Pushed View" id="hoL-hY-KDd" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rWi-Wy-hfn"/>
-                        <viewControllerLayoutGuide type="bottom" id="7sH-nx-OTk"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gZz-gw-Fia">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baI-EV-uBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="779"/>
+            <point key="canvasLocation" x="861.33333333333337" y="737.45333333333338"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oNM-0R-T64">
@@ -78,7 +67,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iD-uG-xac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="1039"/>
+            <point key="canvasLocation" x="-110.39999999999999" y="983.5866666666667"/>
         </scene>
     </scenes>
     <resources>
