@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     let fontName: CFStringRef = "Helvetica Neue"
     let fontSize: CGFloat = 19.0
     var snap: UISnapBehavior!
+    var i = 0
+    var ph = true // если просходит пуш//
     
     
     @IBAction func outsidetouch(sender: UITapGestureRecognizer) {
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
         animator.addBehavior(collision)
         itemBehaviour.addAngularVelocity(0.7, forItem: bubble)
         animator.addBehavior(itemBehaviour)
+        ph = true
         
         if ( snap != nil){
         animator.removeBehavior(snap!)
@@ -156,8 +159,8 @@ class ViewController: UIViewController {
         
     func panning(pan: UIPanGestureRecognizer) {
         
-        let location = pan.locationInView(view);
-        let touchLocation = pan.locationInView(bubble);
+        let location = pan.locationInView(view)
+      //  let touchLocation = pan.locationInView(bubble);
         
         if pan.state == UIGestureRecognizerState.Began {
             // Do some initial setup here
@@ -180,23 +183,15 @@ class ViewController: UIViewController {
     }
     
     func onTap(tap: UITapGestureRecognizer) {
-        let win = APPDELEGATE.window!
-        let tapPoint: CGPoint = CGPoint(x: win.w/2, y: win.h/2)
-        
-        animator.removeAllBehaviors()
-        
-        if(bubble.center.x != win.w/2 && bubble.center.y != win.h/2){
+        let tapPoint = tap.locationInView(view)
+        animator!.removeAllBehaviors()
+        if (ph == true){
             snap = UISnapBehavior(item: bubble, snapToPoint: tapPoint)
             animator.addBehavior(snap)
-            bubble.setScale(1.3)
-            
+            ph = false
+        } else{
+            bubble.setScale(sn)
         }
-        bubble.setScale(sn)
-        
-        
-        
-        
-
         
     }
     
