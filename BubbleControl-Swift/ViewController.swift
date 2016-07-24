@@ -19,10 +19,9 @@ class ViewController: UIViewController {
     var outsideGesture: UITapGestureRecognizer?
     var push: UIPushBehavior?
     let textLayer = CATextLayer()
-    let fontName: CFStringRef = "Helvetica Neue"
+    let fontName: CFStringRef = "HelveticaNeue-Light"
     let fontSize: CGFloat = 19.0
     var snap: UISnapBehavior!
-    var i = 0
     var ph = true // если просходит пуш//
     
     
@@ -204,7 +203,7 @@ class ViewController: UIViewController {
         didSet {
             if animateIcon {
                 bubble.didToggle = { on in
-                    if let shapeLayer = self.bubble.imageView?.layer.sublayers?[0] as? CAShapeLayer {
+                    if (self.bubble.imageView?.layer.sublayers?[0] as? CAShapeLayer) != nil {
                         
                     }
                     else {

@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Animation Probe" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="441" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="73" y="347" width="268" height="42"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Probe" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="441" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="79" y="347" width="257" height="42"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-tU-yOM">
                     <rect key="frame" x="231" y="255" width="20" height="20"/>
@@ -24,15 +25,24 @@
             <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="h9P-tU-yOM" secondAttribute="bottom" constant="204" id="6RZ-tL-UPS"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ElL-c4-Nbs"/>
                 <constraint firstItem="h9P-tU-yOM" firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="OuT-Yt-C0j"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZFe-r5-fNF"/>
                 <constraint firstItem="h9P-tU-yOM" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="46" id="cil-gv-39T"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tkU-jR-o9f"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zFQ-iW-eVq"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="d5l-SL-otC"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="k4Z-vZ-NOW"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="h9P-tU-yOM"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="6RZ-tL-UPS"/>
+                    <exclude reference="OuT-Yt-C0j"/>
+                    <exclude reference="cil-gv-39T"/>
+                    <exclude reference="ElL-c4-Nbs"/>
+                    <exclude reference="ZFe-r5-fNF"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>

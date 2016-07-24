@@ -565,7 +565,7 @@ class BubbleControl: UIControl {
     
     // MARK: Toggle
     
-    func openContentView () {
+    /*  func openContentView () {
         if let v = contentView {
             let win = APPDELEGATE.window!
             win.addSubview(v)
@@ -587,7 +587,7 @@ class BubbleControl: UIControl {
                 moveY(v.top - h - snapOffset)
             }
         }
-    }
+    } */
     
             }
 

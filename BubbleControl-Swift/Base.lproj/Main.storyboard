@@ -10,7 +10,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BubbleControl_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qLz-eX-vsC">
@@ -28,7 +28,6 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Пузырёк" id="bXe-NX-c6r"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dzb-g5-WtF">
@@ -37,21 +36,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="355.19999999999999" y="796.14666666666665"/>
-        </scene>
-        <!--Pushed View-->
-        <scene sceneID="KpZ-cd-ynC">
-            <objects>
-                <viewController title="Pushed View" id="hoL-hY-KDd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gZz-gw-Fia">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="baI-EV-uBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="861.33333333333337" y="737.45333333333338"/>
+            <point key="canvasLocation" x="539" y="983"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oNM-0R-T64">
